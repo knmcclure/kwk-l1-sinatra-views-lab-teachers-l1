@@ -1,5 +1,5 @@
 require './config/environment'
-require './app/models/pets'
+require './models/class'
 
 class ApplicationController < Sinatra::Base
   configure do
