@@ -11,6 +11,12 @@ class Dog
     @@count += 1
   end
   
-  self.all_names
-end
+  def self.all_names
+    @@all_names
+  end
+  
+  def self.count
+    @@count
+  end
+  
 end
