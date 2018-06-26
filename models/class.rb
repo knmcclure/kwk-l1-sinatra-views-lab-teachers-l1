@@ -21,7 +21,7 @@ class Dog
   
 end
 
-class Dog 
+class Cat 
   
   @@all_names = []
   @@count = 0
