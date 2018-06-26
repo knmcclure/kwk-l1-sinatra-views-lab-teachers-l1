@@ -1,20 +1,25 @@
-class App < Sinatra::Base
+require './config/environment'
+require './app/models/pets'
 
-	get '/' do
-		erb :index
-	end
-
-  get '/hello' do
-    erb :hello
+class ApplicationController < Sinatra::Base
+  configure do
+    set :public_folder, 'public'
+    set :views, 'app/views'
   end
   
-  get '/goodbye' do
-    erb :goodbye
-  end
+  get '/pets' do 
+    @dogs = Dog.allNames
+    return erb :pets  
+  end 
   
-  get '/date' do
-    erb :date
+  post '/newPet' do
+    if params[:pet_type].downcase == "dog"
+      Dog.new(params[:pet_name], params[:pet_age])
+      @newPet = "Dog"
+    else
+      Cat.new(params[:pet_name], params[:pet_age])
+      @newPet = "Cat"
+    end 
+    return erb :newPet 
   end
-
-
 end
