@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/pets' do 
-    @dogs = Dog.allNames
+    @dogs = Dog.all_names
     return erb :pets  
   end 
   
