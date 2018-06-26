@@ -10,4 +10,7 @@ class Dog
     @@all_name << name
     @@count += 1
   end
+  
+  self.all_names
+end
 end
